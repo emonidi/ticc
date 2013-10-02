@@ -1,10 +1,16 @@
 [Editors]
 Focused=0
-Order=0,-1
+Order=0
 [Editor_0]
 Open=1
 Top=1
+<<<<<<< HEAD
 CursorCol=14
 CursorRow=55
 TopLine=35
+=======
+CursorCol=8
+CursorRow=12
+TopLine=1
+>>>>>>> 0dada824d6561452eed2c197c78665f4a80e9134
 LeftChar=1
