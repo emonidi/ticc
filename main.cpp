@@ -66,33 +66,35 @@ private:
 
 class Game{	
 int winLines[8][3];
-Board board;
+
 	public:
 		
 		
-		Game(Board board){
-			winLines[0][0,1,2];
-			winLines[1][3,4,5];
-			winLines[2][6,7,8];
-			winLines[3][0,3,6];
-			winLines[4][1,4,7];
-			winLines[5][2,5,8];
-			winLines[6][0,4,8];
-			winLines[7][2,4,6];
+		Game(){
+			
+			winLines[0][0] = {0};
+			winLines[0][1] = {1};
+			winLines[0][2] = {2};
+			winLines[1][0] = {3};
+			winLines[1][1] = {4};
+			winLines[1][2] = {5};
+			winLines[2][0] = {6};
+			winLines[2][1] = {7};
+			winLines[2][2] = {8};
+			winLines[3][0] = {0};
+			winLines[3][1] = {3};
+			winLines[3][1] = {6};
 		};
 		
-		int checkWins(){
-			int winner = 0;
-			for(int i = 0; i < 9; ++i){
-				
-				int total = 0;
-				cout << i;
-				for(int j=0 ; j < 3; ++j){
-				 cout << winLines[i][j] << endl;;
-				//	cout << f.figure;
+		int checkWins(Board board){
+			for(int i = 0; i < 3; ++i){
+				for(int j=0; j < 3; ++j){
+					Field f  = board.getField(winLines[i][j]);
+					cout << f.figure << endl;
 				}
+				
+				cout << "-----" << endl;
 			}
-			return winner;
 		}
 		
 	private:
@@ -100,14 +102,15 @@ Board board;
 
 int main()
 {
-  Board board = Board();
-  board.setField(6,4);
+  Board board;
   board.setField(0,4);
-  board.setField(3,4);
-  struct Field f = board.getField(6);
-  Game game = Game(board);
-  game.checkWins();
-//  cout << board.free_fields[1];
+  board.setField(1,4);
+  board.setField(2,4);
+  struct Field f = board.getField(2);
+  
+  Game game = Game();
+  game.checkWins(board);
+  
   
 }
 
