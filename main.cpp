@@ -8,6 +8,7 @@ struct Field{
 };
 
 
+
 class Board{
 public:
 	//properties
@@ -87,18 +88,37 @@ int winLines[8][3];
 		};
 		
 		int checkWins(Board board){
+			int win = 0;
 			for(int i = 0; i < 3; ++i){
+				int total = 0;
 				for(int j=0; j < 3; ++j){
+					
 					Field f  = board.getField(winLines[i][j]);
-					cout << f.figure << endl;
+					total = total+f.figure;
 				}
 				
-				cout << "-----" << endl;
+			   switch(total){
+			   		
+			   }
 			}
 		}
 		
 	private:
 };
+
+
+class Player{
+public:
+	int figure;
+	
+	Player(int figure){
+		this->figure = figure;
+	}
+	
+private:
+};
+
+
 
 int main()
 {
@@ -110,7 +130,8 @@ int main()
   
   Game game = Game();
   game.checkWins(board);
-  
+  Player player_1(1);
+  Player player_2(4);
   
 }
 
